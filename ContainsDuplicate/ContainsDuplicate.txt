@@ -1,0 +1,21 @@
+public class Solution {
+    public bool ContainsDuplicate(int[] nums) {
+                
+        List<int> numbers = new List<int>();
+        numbers.AddRange(nums);
+        HashSet<int> seenNumbers = new HashSet<int>();
+        bool hasDuplicates = false;
+
+        foreach (int number in numbers)
+        {
+            if (!seenNumbers.Add(number))
+            {
+                hasDuplicates = true;
+                break;
+            }
+        }
+        
+       return  hasDuplicates;
+
+}
+}
